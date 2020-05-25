@@ -1,9 +1,8 @@
-import { elements } from './base';
+import { elements } from "./base";
 
-export const renderItem = item => {
-    const markup = `
-        <li class="shopping__item" data-itemid=${item.id}>
-            
+export const renderItem = (item) => {
+  const markup = `
+        <li class="shopping__item" data-itemid=${item.id}> 
             <p class="shopping__description">${item.ingredient}</p>
             <button class="shopping__delete btn-tiny">
                  <svg>
@@ -11,16 +10,11 @@ export const renderItem = item => {
                  </svg>
              </button>
         </li>
-    `;
-    // <div class="shopping__count">
-    //             <input type="number" value="500" step="100">
-    //             <p>g</p>
-    //         </div>
-    //         
-    elements.shopping.insertAdjacentHTML('beforeend', markup);
-}
+  `;
+  elements.shopping.insertAdjacentHTML("beforeend", markup);
+};
 
-export const deleteItem = id => {
-    const item = document.querySelector(`[data-itemid="${id}"`);
-    item.parentElement.removeChild(item);
-}
+export const deleteItem = (id) => {
+  const item = document.querySelector(`[data-itemid="${id}"`);
+  item.parentElement.removeChild(item);
+};
